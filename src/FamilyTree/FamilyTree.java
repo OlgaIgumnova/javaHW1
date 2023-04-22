@@ -1,6 +1,12 @@
+package FamilyTree;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import Human.Gender;
+import Human.Human;
+import Human.HumanComparatorByBirth;
+import Human.HumanComparatorByName;
 
 public class FamilyTree<H extends Human> implements Serializable {
     private List<H> familyTree;
@@ -9,11 +15,11 @@ public class FamilyTree<H extends Human> implements Serializable {
         this.familyTree = new ArrayList<H>();
     }
 
-    List<H> getFamilyTree() {
+    public List<H> getFamilyTree() {
         return familyTree;
     }
 
-    void sortByParameter(int sortNumber) {
+    public void sortByParameter(int sortNumber) {
         switch (sortNumber) {
             case 1:
                 sortByName();
@@ -30,7 +36,7 @@ public class FamilyTree<H extends Human> implements Serializable {
         }
     }
 
-    void addHuman(H human) {
+    public void addHuman(H human) {
         familyTree.add(human);
         if (human.getMother() != null) {
             human.getMother().addChild(human);
@@ -40,7 +46,7 @@ public class FamilyTree<H extends Human> implements Serializable {
         }
     }
 
-    Human getHumanByName(String name) {
+    public Human getHumanByName(String name) {
         String nameFull = name.replace(",", " ");
         for (Human human : familyTree) {
             if (human.getName().equals(nameFull)) {
@@ -50,7 +56,7 @@ public class FamilyTree<H extends Human> implements Serializable {
         return null;
     }
 
-    Gender getGender(String gender) {
+    public Gender getGender(String gender) {
         if (gender.equals("M")) {
             return Gender.Male;
         } else if (gender.equals("F")){

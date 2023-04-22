@@ -1,4 +1,7 @@
+package FamilyTree;
 import java.util.Scanner;
+
+import Human.Human;
 
 public class FindHuman {
     private FamilyTree<Human> familyTree;
@@ -9,7 +12,7 @@ public class FindHuman {
         this.scanner = new Scanner(System.in);
     }
 
-    void getHumanByName() {
+    public void getHumanByName() {
         System.out.println("Введите имя:");
         try {
             String name = scanner.next();

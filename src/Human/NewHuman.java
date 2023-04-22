@@ -1,4 +1,7 @@
+package Human;
 import java.util.Scanner;
+
+import FamilyTree.FamilyTree;
 
 class NewHuman {
     private FamilyTree<Human> familyTree;

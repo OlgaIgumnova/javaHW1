@@ -1,7 +1,12 @@
+package Human;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import FamilyTree.FamilyTree;
+import FamilyTree.FileHandler;
+import FamilyTree.FindHuman;
 
 public class Service {
     private FamilyTree<Human> familyTree;
